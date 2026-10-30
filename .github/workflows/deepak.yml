@@ -1,4 +1,3 @@
-
 name: myworkflow1
 
 on:
@@ -7,12 +6,20 @@ on:
 jobs:
   myjob1:
     runs-on: ubuntu-latest
-
     steps:
       - name: mystep1
         run: |
-          pwd
           whoami
+          cat /etc/passwd
+          pwd
+          cd
           ls -al
           cat /etc/os-release
+          docker --version
+          docker compose version
+      - name: clone repo to current workspace
+        uses: actions/checkout@v4
+      - name: Check WOrkspae for source code
+        run : ls -al
+          
 
