@@ -1,0 +1,14 @@
+name: myworkflow1
+
+
+on:
+  push:
+jobs:
+  myjob1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: mystep1
+        run:|
+        pwd 
+        whoami
+        ls -al
